@@ -8,22 +8,21 @@ export const getStaticProps = async () => {
   const data = await res.json();
 
   return {
-    props: { ninjas: data } // will be passed to the page component as props
-  }
-}
+    props: { ninjas: data }, // will be passed to the page component as props
+  };
+};
 
 const Ninjas = (props) => {
-  return ( 
+  return (
     <div>
       <h1>All ninjas</h1>
-      {props.ninjas.map(ninja => (
-        <Link href={`/ninjas/${ninja.id}`} key={ ninja.id } className={styles.single}>
-          <h3>{ ninja.name }</h3>
+      {props.ninjas.map((ninja) => (
+        <Link href={`/ninjas/${ninja.id}`} key={ninja.id} className={styles.single}>
+          <h3>{ninja.name}</h3>
         </Link>
-        )
-        )}
+      ))}
     </div>
-   );
-}
- 
+  );
+};
+
 export default Ninjas;

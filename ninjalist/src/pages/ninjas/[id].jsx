@@ -11,14 +11,14 @@ export const getStaticPaths = async () => {
   });
 
   return {
-    paths: paths, // an array of objects where each object is a route param
+    paths, // an array of objects where each object is a route param
     fallback: false,
   };
 };
 
 // `getStaticPaths` requires using `getStaticProps`
 export const getStaticProps = async (context) => {
-  const id = context.params.id;
+  const { id } = context.params;
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   const data = await res.json();
 
@@ -27,7 +27,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-const Details = (props) => {
+function Details(props) {
   return (
     <div>
       <h1>{props.ninja.name}</h1>
@@ -36,6 +36,6 @@ const Details = (props) => {
       <p> {props.ninja.address.city}</p>
     </div>
   );
-};
+}
 
 export default Details;

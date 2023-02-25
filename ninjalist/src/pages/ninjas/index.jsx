@@ -12,17 +12,19 @@ export const getStaticProps = async () => {
   };
 };
 
-const Ninjas = (props) => {
+function Ninjas(props) {
   return (
     <div>
       <h1>All ninjas</h1>
-      {props.ninjas.map((ninja) => (
-        <Link href={`/ninjas/${ninja.id}`} key={ninja.id} className={styles.single}>
-          <h3>{ninja.name}</h3>
-        </Link>
-      ))}
+      {props.ninjas.map((ninja) => {
+        return (
+          <Link href={`/ninjas/${ninja.id}`} key={ninja.id} className={styles.single}>
+            <h3>{ninja.name}</h3>
+          </Link>
+        );
+      })}
     </div>
   );
-};
+}
 
 export default Ninjas;

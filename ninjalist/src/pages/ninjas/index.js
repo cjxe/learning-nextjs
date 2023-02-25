@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '../../styles/Ninjas.module.css';
 
 // runs before the component is rendered
@@ -16,11 +17,9 @@ const Ninjas = (props) => {
     <div>
       <h1>All ninjas</h1>
       {props.ninjas.map(ninja => (
-        <div key={ ninja.id }>
-          <a className={styles.single}>
-            <h3>{ ninja.name }</h3>
-          </a>
-        </div>
+        <Link href={`/ninjas/${ninja.id}`} key={ ninja.id } className={styles.single}>
+          <h3>{ ninja.name }</h3>
+        </Link>
         )
         )}
     </div>

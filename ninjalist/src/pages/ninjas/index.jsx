@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import styles from '../../styles/Ninjas.module.css';
 
 // runs before the component is rendered
 // return props object
@@ -18,7 +17,7 @@ function Ninjas(props) {
       <h1>All ninjas</h1>
       {props.ninjas.map((ninja) => {
         return (
-          <Link href={`/ninjas/${ninja.id}`} key={ninja.id} className={styles.single}>
+          <Link href={`/ninjas/${ninja.id}`} key={ninja.id}>
             <h3>{ninja.name}</h3>
           </Link>
         );

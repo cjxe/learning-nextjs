@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -10,8 +9,8 @@ export default function Home() {
         <meta name="keywords" content="ninjas" />
       </Head>
       <div>
-        <h1 className={styles.title}>homwpage</h1>
-        <p className={styles.title}>
+        <h1 className="text-3xl font-bold underline">homwpage</h1>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod luctus purus, sed
           feugiat nisl finibus id. Suspendisse porta lacus elit, quis aliquam sem hendrerit eget.
           Duis a mattis lectus, non dapibus est. Aliquam enim diam, ornare ut consequat ac, viverra
@@ -20,9 +19,7 @@ export default function Home() {
           aliquam urna vestibulum in. Sed egestas mauris et tempor dictum. In varius nibh urna.
           Nulla quam lorem, dictum et venenatis eu, sodales vel quam.
         </p>
-        <Link href="/ninjas" className={styles.btn}>
-          See Ninja Listing
-        </Link>
+        <Link href="/ninjas">See Ninja Listing</Link>
       </div>
     </>
   );
